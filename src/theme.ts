@@ -5,10 +5,10 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: '#312d3a',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#928ba3',
     },
     background: {
       default: '#f1f1f1',
@@ -47,10 +47,10 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#1976d2',
+      main: '#312d3a',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#928ba3',
     },
     background: {
       default: '#1a181e',

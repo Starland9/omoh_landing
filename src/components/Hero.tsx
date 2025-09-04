@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import mockup from '../assets/mockup.jpg';
+import icon from '../assets/icon.png'; // Import the new icon
 
 const Hero = () => {
   const theme = useTheme();
@@ -24,8 +25,13 @@ const Hero = () => {
                 Pour avoir une vue Globale de vos Transactions financières
               </Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                {/* Logo Placeholder */}
-                <Box sx={{ width: 60, height: 60, bgcolor: 'action.hover', borderRadius: '12px', mr: 2 }} />
+                {/* Replaced Logo Placeholder with actual icon */}
+                <Box
+                  component="img"
+                  src={icon}
+                  alt="Omoh Icon"
+                  sx={{ width: 60, height: 60, mr: 2, borderRadius: '12px' }} // Removed bgcolor
+                />
                 <Typography variant="h4" component="span" sx={{ fontWeight: 700 }}>
                   Omoh
                 </Typography>

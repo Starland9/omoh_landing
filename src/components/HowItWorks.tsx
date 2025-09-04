@@ -39,7 +39,7 @@ const HowItWorks = () => {
                 viewport={{ once: true }}
               >
                 <Box sx={{ textAlign: 'center' }}>
-                  <Avatar sx={{ bgcolor: 'primary.main', mx: 'auto', width: 56, height: 56 }}>
+                  <Avatar sx={{ bgcolor: 'primary.main', mx: 'auto', width: 56, height: 56, color: 'primary.contrastText' }}>
                     {step.icon}
                   </Avatar>
                   <Typography variant="h5" component="h3" gutterBottom sx={{ mt: 2 }}>
