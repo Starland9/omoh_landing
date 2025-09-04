@@ -40,6 +40,11 @@ export const lightTheme = createTheme({
       fontWeight: 500,
     },
   },
+  transitions: {
+    create: createTheme().transitions.create,
+    easing: createTheme().transitions.easing,
+    duration: createTheme().transitions.duration,
+  },
 });
 
 // Thème sombre
@@ -81,5 +86,10 @@ export const darkTheme = createTheme({
     h6: {
       fontWeight: 500,
     },
+  },
+  transitions: {
+    create: createTheme().transitions.create,
+    easing: createTheme().transitions.easing,
+    duration: createTheme().transitions.duration,
   },
 });
