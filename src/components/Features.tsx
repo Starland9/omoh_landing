@@ -13,29 +13,21 @@ const features = [
     title: 'Extraction Automatique',
     description: 'Kipa analyse vos SMS pour identifier et enregistrer automatiquement vos transactions.',
     image: autoExtract,
-    color: '#6366f1',
-    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   },
   {
     title: 'Liste de Transactions',
     description: 'Visualisez toutes vos transactions dans une liste claire et organisée.',
     image: transactionsList,
-    color: '#10b981',
-    gradient: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)',
   },
   {
     title: 'Recherche et Filtrage',
     description: 'Recherchez et filtrez vos transactions par opérateur, type ou date.',
     image: filtering,
-    color: '#f59e0b',
-    gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
   },
   {
     title: 'Configuration Personnalisée',
     description: "Ajoutez vos numéros pour améliorer la précision de l'extraction des transactions.",
     image: configs,
-    color: '#ef4444',
-    gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)',
   },
 ];
 
@@ -45,7 +37,9 @@ const Features = () => {
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+        background: theme.palette.mode === 'light'
+          ? `linear-gradient(135deg, ${alpha(theme.palette.background.default, 0.9)} 0%, ${alpha(theme.palette.background.paper, 0.9)} 100%)`
+          : `linear-gradient(135deg, ${alpha(theme.palette.background.default, 0.9)} 0%, ${alpha(theme.palette.background.paper, 0.9)} 100%)`,
         py: 12,
         position: 'relative',
         overflow: 'hidden',
@@ -56,7 +50,7 @@ const Features = () => {
           left: 0,
           right: 0,
           height: '100%',
-          background: 'radial-gradient(circle at 30% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(120, 198, 121, 0.1) 0%, transparent 50%)',
+          background: `radial-gradient(circle at 30% 20%, ${alpha(theme.palette.primary.main, 0.1)} 0%, transparent 50%), radial-gradient(circle at 70% 80%, ${alpha(theme.palette.secondary.main, 0.1)} 0%, transparent 50%)`,
           pointerEvents: 'none',
         }
       }}
@@ -68,10 +62,7 @@ const Features = () => {
             variant="h3"
             component="h2"
             sx={{
-              background: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: 'text.primary',
               fontWeight: 700,
               mb: 2,
               fontSize: { xs: '2.5rem', md: '3.5rem' }
@@ -83,7 +74,7 @@ const Features = () => {
             sx={{
               width: 80,
               height: 4,
-              background: 'linear-gradient(45deg, #667eea, #764ba2)',
+              background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
               mx: 'auto',
               borderRadius: 2,
               mb: 3
@@ -125,10 +116,10 @@ const Features = () => {
                     height: '480px',
                     borderRadius: '24px',
                     overflow: 'hidden',
-                    background: 'rgba(255, 255, 255, 0.9)',
+                    background: alpha(theme.palette.background.paper, 0.9),
                     backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+                    border: `1px solid ${alpha(theme.palette.divider, 0.2)}`,
+                    boxShadow: theme.shadows[4],
                     transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                     cursor: 'pointer',
                     transformStyle: 'preserve-3d',
@@ -139,11 +130,11 @@ const Features = () => {
                       left: 0,
                       right: 0,
                       height: '4px',
-                      background: feature.gradient,
+                      background: theme.palette.primary.main,
                       zIndex: 2,
                     },
                     '&:hover': {
-                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+                      boxShadow: theme.shadows[12],
                       '& .feature-image': {
                         transform: 'scale(1.1)',
                         filter: 'brightness(1.1)',
@@ -151,11 +142,8 @@ const Features = () => {
                       '& .feature-overlay': {
                         opacity: 1,
                       },
-                      '& .feature-number': {
-                        transform: 'scale(1.1) rotate(10deg)',
-                      },
                       '& .feature-title': {
-                        color: feature.color,
+                        color: theme.palette.primary.main,
                       },
                       '& .feature-line': {
                         width: '100%',
@@ -174,6 +162,7 @@ const Features = () => {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
+                        objectPosition: 'top',
                         transition: 'all 0.4s ease',
                       }}
                     />
@@ -184,35 +173,12 @@ const Features = () => {
                       sx={{
                         position: 'absolute',
                         inset: 0,
-                        background: `linear-gradient(45deg, ${alpha(feature.color, 0.2)}, transparent 70%)`,
+                        background: `linear-gradient(45deg, ${alpha(theme.palette.primary.main, 0.2)}, transparent 70%)`,
                         opacity: 0,
                         transition: 'opacity 0.4s ease',
                       }}
                     />
 
-                    {/* Number Badge */}
-                    <Box
-                      className="feature-number"
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        width: 48,
-                        height: 48,
-                        borderRadius: '50%',
-                        background: feature.gradient,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        fontWeight: 'bold',
-                        fontSize: '1.2rem',
-                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
-                        transition: 'transform 0.3s ease',
-                      }}
-                    >
-                      {String(index + 1).padStart(2, '0')}
-                    </Box>
                   </Box>
 
                   {/* Content Section */}
@@ -257,7 +223,7 @@ const Features = () => {
                       sx={{
                         height: '2px',
                         width: '0%',
-                        background: feature.gradient,
+                        background: theme.palette.primary.main,
                         borderRadius: 1,
                         transition: 'all 0.4s ease',
                         opacity: 0,
@@ -274,7 +240,7 @@ const Features = () => {
                       width: 0,
                       height: 0,
                       borderLeft: '24px solid transparent',
-                      borderBottom: `24px solid ${alpha(feature.color, 0.1)}`,
+                      borderBottom: `24px solid ${alpha(theme.palette.primary.main, 0.1)}`,
                       transition: 'all 0.3s ease',
                     }}
                   />
