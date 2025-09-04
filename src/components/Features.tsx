@@ -11,7 +11,7 @@ import configs from '../assets/screenshots/configs.jpg';
 const features = [
   {
     title: 'Extraction Automatique',
-    description: 'Kipa analyse vos SMS pour identifier et enregistrer automatiquement vos transactions.',
+    description: 'Omoh analyse vos SMS pour identifier et enregistrer automatiquement vos transactions.',
     image: autoExtract,
   },
   {
@@ -85,7 +85,7 @@ const Features = () => {
             color="text.secondary"
             sx={{ maxWidth: 600, mx: 'auto', lineHeight: 1.6 }}
           >
-            Découvrez les outils puissants qui font de Kipa votre assistant financier idéal
+            Découvrez les outils puissants qui font de Omoh votre assistant financier idéal
           </Typography>
         </Box>
 

@@ -12,7 +12,7 @@ const steps = [
   },
   {
     icon: <FindInPageIcon />,
-    title: '2. Kipa les analyse',
+    title: '2. Omoh les analyse',
     description: 'L\'application analyse automatiquement le contenu pour extraire les détails pertinents.',
   },
   {
