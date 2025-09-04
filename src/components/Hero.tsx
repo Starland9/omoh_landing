@@ -6,7 +6,7 @@ const Hero = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', color: 'text.primary', py: 10, position: 'relative', overflow: 'hidden' }}>
+    <Box sx={{ color: 'text.primary', py: 10, position: 'relative', overflow: 'hidden' }}>
       {/* Abstract shapes */}
       <Box sx={{ position: 'absolute', top: -50, left: -150, width: 400, height: 400, background: `rgba(${theme.palette.primary.main}, 0.1)`, borderRadius: '50%', filter: 'blur(100px)' }} />
       <Box sx={{ position: 'absolute', bottom: -100, right: -100, width: 300, height: 300, background: `rgba(${theme.palette.secondary.main}, 0.1)`, borderRadius: '50%', filter: 'blur(100px)' }} />
