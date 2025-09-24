@@ -30,4 +30,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist # The build output directory
           publish_branch: gh-pages # The branch to deploy to
-          cname: # Optional: Your custom domain if you have one
+          # cname: # Optional: Your custom domain if you have one
